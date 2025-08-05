@@ -282,36 +282,14 @@
         <div class="container">
             <h2>Онцлох Бүтээгдэхүүн</h2>
             <div class="product-grid">
+                {% for product in featured_products %}
                 <div class="product-card">
-                    <img src="https://via.placeholder.com/250x180?text=Бүтээгдэхүүн+1" alt="Бүтээгдэхүүн 1">
-                    <h3>Гар утас</h3>
-                    <p class="price">₮1,200,000</p>
+                    <img src="{{ product.productimage_set.first.image.url }}" alt="{{ product.name }}">
+                    <h3>{{ product.name }}</h3>≈
+                    <p class="price">₮{{ product.price }}</p>
                     <button>Сагсанд хийх</button>
                 </div>
-                <div class="product-card">
-                    <img src="https://via.placeholder.com/250x180?text=Бүтээгдэхүүн+2" alt="Бүтээгдэхүүн 2">
-                    <h3>Цүнх</h3>
-                    <p class="price">₮95,000</p>
-                    <button>Сагсанд хийх</button>
-                </div>
-                <div class="product-card">
-                    <img src="https://via.placeholder.com/250x180?text=Бүтээгдэхүүн+3" alt="Бүтээгдэхүүн 3">
-                    <h3>Орны даавууны иж бүрдэл</h3>
-                    <p class="price">₮45,000</p>
-                    <button>Сагсанд хийх</button>
-                </div>
-                <div class="product-card">
-                    <img src="https://via.placeholder.com/250x180?text=Бүтээгдэхүүн+4" alt="Бүтээгдэхүүн 4">
-                    <h3>Эмэгтэй куртик</h3>
-                    <p class="price">₮180,000</p>
-                    <button>Сагсанд хийх</button>
-                </div>
-                <div class="product-card">
-                    <img src="https://via.placeholder.com/250x180?text=Бүтээгдэхүүн+5" alt="Бүтээгдэхүүн 5">
-                    <h3>Аялалын рюкзак</h3>
-                    <p class="price">₮60,000</p>
-                    <button>Сагсанд хийх</button>
-                </div>
+                {% endfor %}
             </div>
         </div>
     </section>
